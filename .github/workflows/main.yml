@@ -14,13 +14,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Docker Build
       run: docker build . --file Dockerfile --tag testrepo/testimage:latest
     - uses: anchore/scan-action@v3
       with:
-        image-reference: "testrepo/testimage:latest"
-        dockerfile-path: "./Dockerfile"
+        image: "testrepo/testimage:latest"
         fail-build: true
-        
+      
         
