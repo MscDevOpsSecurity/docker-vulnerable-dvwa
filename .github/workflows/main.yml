@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Docker Build
       run: docker build . --file Dockerfile --tag testrepo/testimage:latest
-    - uses: anchore/scan-action@v1
+    - uses: anchore/scan-action@v3
       with:
         image-reference: "testrepo/testimage:latest"
         dockerfile-path: "./Dockerfile"
