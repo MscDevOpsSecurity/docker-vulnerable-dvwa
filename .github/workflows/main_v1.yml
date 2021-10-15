@@ -19,5 +19,5 @@ jobs:
       run: docker build . --file Dockerfile --tag testrepo/testimage:latest
     - uses: anchore/scan-action@v1
       with:
-        image: "testrepo/testimage:latest"
-        fail-build: true
+        image-reference: "testrepo/testimage:latest"
+        dockerfile-path: "./Dockerfile"
